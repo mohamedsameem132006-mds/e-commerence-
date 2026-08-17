@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Electronics - Mds.com</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#000f5d",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "secondary-fixed-dim": "#bbc3ff",
+                        "surface-variant": "#e1e3e4",
+                        "on-tertiary-container": "#e17c5a",
+                        "secondary-container": "#405cff",
+                        "surface-white": "#FFFFFF",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb59d",
+                        "surface-container-high": "#e7e8e9",
+                        "surface-bright": "#f8f9fa",
+                        "surface-tint": "#4c56af",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#e0e0ff",
+                        "on-secondary-fixed-variant": "#002ccd",
+                        "surface-container-highest": "#e1e3e4",
+                        "surface": "#f8f9fa",
+                        "on-background": "#191c1d",
+                        "vibrant-accent": "#3D5AFE",
+                        "on-secondary": "#ffffff",
+                        "outline": "#767683",
+                        "inverse-primary": "#bdc2ff",
+                        "on-tertiary-fixed": "#390c00",
+                        "tertiary-container": "#5c1800",
+                        "on-primary-fixed-variant": "#343d96",
+                        "secondary": "#1c3fe7",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "inverse-on-surface": "#f0f1f2",
+                        "tertiary-fixed": "#ffdbd0",
+                        "outline-variant": "#c6c5d4",
+                        "inverse-surface": "#2e3132",
+                        "surface-container": "#edeeef",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#bdc2ff",
+                        "on-primary-fixed": "#000767",
+                        "on-primary-container": "#8690ee",
+                        "secondary-fixed": "#dee0ff",
+                        "primary": "#000666",
+                        "on-surface": "#191c1d",
+                        "surface-container-low": "#f3f4f5",
+                        "primary-container": "#1a237e",
+                        "surface-dim": "#d9dadb",
+                        "on-secondary-container": "#f5f3ff",
+                        "tertiary": "#380b00",
+                        "on-surface-variant": "#454652",
+                        "pure-black": "#000000",
+                        "on-tertiary-fixed-variant": "#7b2e12",
+                        "background": "#f8f9fa",
+                        "deep-navy": "#1A237E"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "gutter": "24px",
+                        "stack-sm": "8px",
+                        "stack-lg": "32px",
+                        "margin-desktop": "48px",
+                        "margin-mobile": "16px",
+                        "stack-md": "16px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Hanken Grotesk"],
+                        "body-sm": ["Hanken Grotesk"],
+                        "label-sm": ["Hanken Grotesk"],
+                        "headline-xl": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "headline-sm": ["Hanken Grotesk"],
+                        "label-md": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-md": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-xl": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Hanken Grotesk', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .fill-icon { font-variation-settings: 'FILL' 1; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased pt-20">
+<!-- TopNavBar (JSON) -->
+<nav class="fixed top-0 w-full z-50 flex items-center justify-between px-margin-desktop h-20 max-w-container-max mx-auto shadow-sm bg-surface-white">
+<div class="flex items-center gap-gutter">
+<a class="font-headline-md text-headline-md font-bold text-primary" href="#">Mds.com</a>
+<div class="hidden md:flex items-center gap-base">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-all duration-200 hover:opacity-80 px-4 py-2" href="#">Fashion</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-all duration-200 hover:opacity-80 px-4 py-2" href="#">Footwear</a>
+<a class="font-body-md text-body-md text-secondary border-b-2 border-secondary pb-1 transition-all duration-200 hover:opacity-80 px-4 py-2" href="#">Electronics</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-all duration-200 hover:opacity-80 px-4 py-2" href="#">Home</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-all duration-200 hover:opacity-80 px-4 py-2" href="#">Deals</a>
+</div>
+</div>
+<div class="flex items-center gap-base">
+<button class="p-2 text-on-surface-variant hover:text-secondary transition-all duration-200 scale-95 active:scale-100"><span class="material-symbols-outlined">favorite</span></button>
+<button class="p-2 text-on-surface-variant hover:text-secondary transition-all duration-200 scale-95 active:scale-100"><span class="material-symbols-outlined">shopping_cart</span></button>
+<button class="p-2 text-on-surface-variant hover:text-secondary transition-all duration-200 scale-95 active:scale-100"><span class="material-symbols-outlined">account_circle</span></button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg flex flex-col gap-stack-lg">
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface-variant">
+<a class="hover:text-secondary transition-colors" href="#">Home</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-on-surface font-semibold">Electronics</span>
+</nav>
+<!-- Page Header -->
+<header>
+<h1 class="font-headline-xl text-headline-xl text-on-surface mb-2">Electronics</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Discover the latest in tech, from cutting-edge smartphones to immersive audio.</p>
+</header>
+<!-- Layout Grid: Sidebar Filters + Products -->
+<div class="flex flex-col md:flex-row gap-gutter">
+<!-- Sidebar Filters -->
+<aside class="w-full md:w-64 flex-shrink-0 flex flex-col gap-stack-md bg-surface-white p-6 rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.04)] h-fit">
+<div class="flex items-center justify-between mb-4 border-b border-outline-variant pb-4">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Filters</h2>
+<button class="font-label-md text-label-md text-secondary hover:underline">Clear all</button>
+</div>
+<!-- Filter Category: Brand -->
+<div class="flex flex-col gap-2">
+<h3 class="font-label-md text-label-md text-on-surface">Brand</h3>
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="form-checkbox rounded text-secondary border-outline focus:ring-secondary focus:ring-opacity-50 w-4 h-4" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant group-hover:text-on-surface transition-colors">TechNova</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="form-checkbox rounded text-secondary border-outline focus:ring-secondary focus:ring-opacity-50 w-4 h-4" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant group-hover:text-on-surface transition-colors">Quantum</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="form-checkbox rounded text-secondary border-outline focus:ring-secondary focus:ring-opacity-50 w-4 h-4" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant group-hover:text-on-surface transition-colors">AeroAcoustics</span>
+</label>
+</div>
+<!-- Filter Category: Price -->
+<div class="flex flex-col gap-2 pt-4 border-t border-outline-variant">
+<h3 class="font-label-md text-label-md text-on-surface">Price Range</h3>
+<div class="flex items-center gap-2">
+<input class="w-full bg-surface border border-outline rounded px-2 py-1 font-body-sm text-body-sm focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-colors" placeholder="Min" type="number"/>
+<span class="text-on-surface-variant">-</span>
+<input class="w-full bg-surface border border-outline rounded px-2 py-1 font-body-sm text-body-sm focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-colors" placeholder="Max" type="number"/>
+</div>
+</div>
+</aside>
+<!-- Product Grid -->
+<section class="flex-1">
+<!-- Sorting & View Controls -->
+<div class="flex items-center justify-between mb-stack-md bg-surface-white p-4 rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.04)]">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Showing 24 results</span>
+<div class="flex items-center gap-4">
+<select class="bg-surface border-none rounded font-body-sm text-body-sm text-on-surface focus:ring-0 cursor-pointer">
+<option>Recommended</option>
+<option>Price: Low to High</option>
+<option>Price: High to Low</option>
+<option>Newest Arrivals</option>
+</select>
+<div class="hidden sm:flex items-center gap-1 border-l border-outline-variant pl-4">
+<button class="p-1 text-secondary"><span class="material-symbols-outlined">grid_view</span></button>
+<button class="p-1 text-on-surface-variant hover:text-on-surface"><span class="material-symbols-outlined">view_list</span></button>
+</div>
+</div>
+</div>
+<!-- Products -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Product Card 1 -->
+<article class="bg-surface-white rounded-xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 group flex flex-col">
+<div class="relative aspect-[4/3] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A sleek, modern premium smartphone displayed on a minimalist white pedestal. Bright, high-key lighting emphasizing its polished metal edges and vibrant edge-to-edge screen. Corporate e-commerce aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoJ61B0JGP9ohD5Dx_4xDnqJZIsnPfv7e-VST2Gx_q5fwcFycApxwFgDgkvt6T9Llrz0a8UoeP_djmavloO5DK2IGfb5XoGo40W0rDdi_vSPB2nD602JqzwivqWj9s9GyD4Jcen0X2h4EBr6fhBGd13pcPr92w0l1-tJvPa6nx3bbqLyUnpskLrSt-l74Yb2OQ0Mp6eCIK_YllihgERwRh6tTHjlE01FpUDsUqWIwaUhRqswW0vlkQPA"/>
+<span class="absolute top-3 left-3 bg-primary text-on-primary font-label-sm text-label-sm px-2 py-1 rounded">New</span>
+<button class="absolute top-3 right-3 p-2 bg-surface-white/80 backdrop-blur rounded-full text-on-surface-variant hover:text-error transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<div class="p-4 flex flex-col flex-1 gap-2">
+<div class="flex items-center gap-1 text-[#F59E0B]">
+<span class="material-symbols-outlined fill-icon text-[16px]">star</span>
+<span class="material-symbols-outlined fill-icon text-[16px]">star</span>
+<span class="material-symbols-outlined fill-icon text-[16px]">star</span>
+<span class="material-symbols-outlined fill-icon text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px]">star_half</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant ml-1">(124)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight">Quantum Pro X1 Smartphone</h3>
+<div class="mt-auto pt-2 flex items-center justify-between">
+<span class="font-body-lg text-body-lg font-bold text-on-surface">$899.00</span>
+<button class="bg-secondary text-on-secondary px-4 py-2 rounded-lg font-label-md text-label-md hover:bg-secondary/90 transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span> Add
+                                </button>
+</div>
+</div>
+</article>
+<!-- Product Card 2 -->
+<article class="bg-surface-white rounded-xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 group flex flex-col">
+<div class="relative aspect-[4/3] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="High-end wireless noise-canceling headphones in matte black, resting on a clean light gray surface. Professional studio lighting highlighting the texture of the ear cushions and sleek headband. Minimalist product photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrQhYXts5mCCPJjFMTNfWXfozu2WkqHg9KFek2XgW2iLOQIyuuCnJAKujEaFOxED-ruO5v8z1R6FJkquXRAu_5pUX1OZ6qlYZe0Ybi876ioyl74gW4opKRHUqBUVA0-wjVCJNHExY5mcqxiNFahr_Kfvp1qM2tZvF-7FEORUSEEMjNJ53YhYa64VntZ5AeewUrcJAaIchV0ZBIvhd1HnCFnt0Z5zEug0YkmMa_zJpj4sBfhquNqvPyBQ"/>
+<button class="absolute top-3 right-3 p-2 bg-surface-white/80 backdrop-blur rounded-full text-on-surface-variant hover:text-error transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<div class="p-4 flex flex-col flex-1 gap-2">
+<div class="flex items-center gap-1 text-[#F59E0B]">
+<span class="material-symbols-outlined fill-icon text-[16px]">star</span>
+<span class="material-symbols-outlined fill-icon text-[16px]">star</span>
+<span class="material-symbols-outlined fill-icon text-[16px]">star</span>
+<span class="material-symbols-outlined fill-icon text-[16px]">star</span>
+<span class="material-symbols-outlined fill-icon text-[16px]">star</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant ml-1">(89)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight">AeroAcoustics Silence Pro</h3>
+<div class="mt-auto pt-2 flex items-center justify-between">
+<span class="font-body-lg text-body-lg font-bold text-on-surface">$299.99</span>
+<button class="border border-secondary text-secondary px-4 py-2 rounded-lg font-label-md text-label-md hover:bg-secondary/5 transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span> Add
+                                </button>
+</div>
+</div>
+</article>
+<!-- Product Card 3 -->
+<article class="bg-surface-white rounded-xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 group flex flex-col">
+<div class="relative aspect-[4/3] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A slim, silver ultra-portable laptop partially open on a crisp white desk. Soft, diffused daylight illuminating the metallic keyboard deck and vibrant display. Clean, corporate technology setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbqXEJAFZlHRw0Sjtpc4_xrQfu4_JehLi2ogaFNZGjBcxry_v90dRgVguKk5PqGjk3q8e0eEN-Ul0SANmlQjM6C-_9AHzp9CHwKH3hmVUBa0qlVN2YyOi5Z6ofWCzu3fmHpm53wP8IWoTiXNKI6XFddjIFRR7K7x3tpKO8g1n34LRKNmP1wE6IhQv7yt1Le8CrdfS3ZDogW5KzYQR1pjEB8Qk_Q-9dhZ9-A1QZcQ5Kvnk1f2WQJ6aZ-Q"/>
+<span class="absolute top-3 left-3 bg-secondary-container text-on-secondary-container font-label-sm text-label-sm px-2 py-1 rounded">Bestseller</span>
+<button class="absolute top-3 right-3 p-2 bg-surface-white/80 backdrop-blur rounded-full text-on-surface-variant hover:text-error transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<div class="p-4 flex flex-col flex-1 gap-2">
+<div class="flex items-center gap-1 text-[#F59E0B]">
+<span class="material-symbols-outlined fill-icon text-[16px]">star</span>
+<span class="material-symbols-outlined fill-icon text-[16px]">star</span>
+<span class="material-symbols-outlined fill-icon text-[16px]">star</span>
+<span class="material-symbols-outlined fill-icon text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px]">star</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant ml-1">(342)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight">TechNova Book 14" M2</h3>
+<div class="mt-auto pt-2 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-on-surface-variant line-through">$1,299.00</span>
+<span class="font-body-lg text-body-lg font-bold text-error">$1,099.00</span>
+</div>
+<button class="bg-secondary text-on-secondary px-4 py-2 rounded-lg font-label-md text-label-md hover:bg-secondary/90 transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span> Add
+                                </button>
+</div>
+</div>
+</article>
+</div>
+<!-- Pagination (Placeholder) -->
+<div class="flex justify-center mt-stack-lg gap-2">
+<button class="w-10 h-10 rounded-lg border border-outline-variant flex items-center justify-center text-on-surface-variant hover:border-secondary hover:text-secondary transition-colors"><span class="material-symbols-outlined">chevron_left</span></button>
+<button class="w-10 h-10 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md flex items-center justify-center">1</button>
+<button class="w-10 h-10 rounded-lg border border-outline-variant flex items-center justify-center text-on-surface font-label-md text-label-md hover:border-secondary hover:text-secondary transition-colors">2</button>
+<button class="w-10 h-10 rounded-lg border border-outline-variant flex items-center justify-center text-on-surface font-label-md text-label-md hover:border-secondary hover:text-secondary transition-colors">3</button>
+<button class="w-10 h-10 rounded-lg border border-outline-variant flex items-center justify-center text-on-surface-variant hover:border-secondary hover:text-secondary transition-colors"><span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer (JSON) -->
+<footer class="w-full py-stack-lg border-t border-outline-variant bg-primary text-on-primary">
+<div class="w-full px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-container-max mx-auto">
+<div class="flex flex-col gap-4">
+<span class="font-headline-sm text-headline-sm text-on-primary">Mds.com</span>
+<p class="font-body-sm text-body-sm text-on-primary/80">© 2024 Mds.com Marketplace. All rights reserved.</p>
+</div>
+<div class="flex flex-col gap-2 font-body-sm text-body-sm">
+<a class="text-on-primary/80 hover:text-on-primary hover:underline decoration-1 underline-offset-4 transition-opacity opacity-100 hover:opacity-80" href="#">About Us</a>
+<a class="text-on-primary/80 hover:text-on-primary hover:underline decoration-1 underline-offset-4 transition-opacity opacity-100 hover:opacity-80" href="#">Contact Support</a>
+</div>
+<div class="flex flex-col gap-2 font-body-sm text-body-sm">
+<a class="text-on-primary/80 hover:text-on-primary hover:underline decoration-1 underline-offset-4 transition-opacity opacity-100 hover:opacity-80" href="#">Privacy Policy</a>
+<a class="text-on-primary/80 hover:text-on-primary hover:underline decoration-1 underline-offset-4 transition-opacity opacity-100 hover:opacity-80" href="#">Terms of Service</a>
+</div>
+<div class="flex flex-col gap-2 font-body-sm text-body-sm">
+<a class="text-on-primary/80 hover:text-on-primary hover:underline decoration-1 underline-offset-4 transition-opacity opacity-100 hover:opacity-80" href="#">Shipping Info</a>
+<a class="text-on-primary/80 hover:text-on-primary hover:underline decoration-1 underline-offset-4 transition-opacity opacity-100 hover:opacity-80" href="#">Sell on Mds</a>
+</div>
+</div>
+</footer>
+</body></html>

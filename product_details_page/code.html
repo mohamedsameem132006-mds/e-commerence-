@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>High-End Smartphone - Mds.com</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#000f5d",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "secondary-fixed-dim": "#bbc3ff",
+                        "surface-variant": "#e1e3e4",
+                        "on-tertiary-container": "#e17c5a",
+                        "secondary-container": "#405cff",
+                        "surface-white": "#FFFFFF",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb59d",
+                        "surface-container-high": "#e7e8e9",
+                        "surface-bright": "#f8f9fa",
+                        "surface-tint": "#4c56af",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#e0e0ff",
+                        "on-secondary-fixed-variant": "#002ccd",
+                        "surface-container-highest": "#e1e3e4",
+                        "surface": "#f8f9fa",
+                        "on-background": "#191c1d",
+                        "vibrant-accent": "#3D5AFE",
+                        "on-secondary": "#ffffff",
+                        "outline": "#767683",
+                        "inverse-primary": "#bdc2ff",
+                        "on-tertiary-fixed": "#390c00",
+                        "tertiary-container": "#5c1800",
+                        "on-primary-fixed-variant": "#343d96",
+                        "secondary": "#1c3fe7",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "inverse-on-surface": "#f0f1f2",
+                        "tertiary-fixed": "#ffdbd0",
+                        "outline-variant": "#c6c5d4",
+                        "inverse-surface": "#2e3132",
+                        "surface-container": "#edeeef",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#bdc2ff",
+                        "on-primary-fixed": "#000767",
+                        "on-primary-container": "#8690ee",
+                        "secondary-fixed": "#dee0ff",
+                        "primary": "#000666",
+                        "on-surface": "#191c1d",
+                        "surface-container-low": "#f3f4f5",
+                        "primary-container": "#1a237e",
+                        "surface-dim": "#d9dadb",
+                        "on-secondary-container": "#f5f3ff",
+                        "tertiary": "#380b00",
+                        "on-surface-variant": "#454652",
+                        "pure-black": "#000000",
+                        "on-tertiary-fixed-variant": "#7b2e12",
+                        "background": "#f8f9fa",
+                        "deep-navy": "#1A237E"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "gutter": "24px",
+                        "stack-sm": "8px",
+                        "stack-lg": "32px",
+                        "margin-desktop": "48px",
+                        "margin-mobile": "16px",
+                        "stack-md": "16px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Hanken Grotesk"],
+                        "body-sm": ["Hanken Grotesk"],
+                        "label-sm": ["Hanken Grotesk"],
+                        "headline-xl": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "headline-sm": ["Hanken Grotesk"],
+                        "label-md": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-md": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-xl": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col pt-[80px]">
+<!-- TopNavBar -->
+<nav class="bg-surface-white dark:bg-surface shadow-sm fixed top-0 w-full z-50 flex items-center justify-between px-margin-desktop h-20 mx-auto w-full md:flex hidden" style="max-width: 1280px; left: 50%; transform: translateX(-50%);">
+<div class="flex items-center gap-gutter">
+<a class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed" href="#">Mds.com</a>
+<div class="hidden lg:flex items-center gap-stack-lg ml-margin-desktop">
+<a class="text-on-surface-variant hover:text-secondary font-label-md text-label-md transition-all duration-200 hover:opacity-80 scale-95 active:scale-100 transition-transform" href="#">Fashion</a>
+<a class="text-on-surface-variant hover:text-secondary font-label-md text-label-md transition-all duration-200 hover:opacity-80 scale-95 active:scale-100 transition-transform" href="#">Footwear</a>
+<a class="text-secondary border-b-2 border-secondary pb-1 font-label-md text-label-md transition-all duration-200 hover:opacity-80 scale-95 active:scale-100 transition-transform" href="#">Electronics</a>
+<a class="text-on-surface-variant hover:text-secondary font-label-md text-label-md transition-all duration-200 hover:opacity-80 scale-95 active:scale-100 transition-transform" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-secondary font-label-md text-label-md transition-all duration-200 hover:opacity-80 scale-95 active:scale-100 transition-transform" href="#">Deals</a>
+</div>
+</div>
+<div class="flex items-center gap-stack-md">
+<div class="relative hidden md:block">
+<input class="border border-outline-variant rounded-full py-2 pl-4 pr-10 bg-surface-bright focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary w-64 font-body-sm text-body-sm transition-colors" placeholder="Search..." type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant" style="font-variation-settings: 'FILL' 0;">search</span>
+</div>
+<button class="p-2 rounded-full hover:bg-surface-container-low transition-colors text-secondary dark:text-secondary-fixed-dim" data-icon="favorite"><span class="material-symbols-outlined">favorite</span></button>
+<button class="p-2 rounded-full hover:bg-surface-container-low transition-colors text-secondary dark:text-secondary-fixed-dim relative" data-icon="shopping_cart">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="absolute top-1 right-1 bg-error text-on-error font-label-sm text-label-sm rounded-full w-4 h-4 flex items-center justify-center" style="font-size: 10px;">2</span>
+</button>
+<button class="p-2 rounded-full hover:bg-surface-container-low transition-colors text-secondary dark:text-secondary-fixed-dim" data-icon="account_circle"><span class="material-symbols-outlined">account_circle</span></button>
+</div>
+</nav>
+<!-- Mobile Header -->
+<header class="md:hidden fixed top-0 w-full z-50 bg-surface-white shadow-sm h-16 flex items-center justify-between px-margin-mobile">
+<button class="p-2 text-on-surface"><span class="material-symbols-outlined">menu</span></button>
+<a class="font-headline-sm text-headline-sm font-bold text-primary" href="#">Mds.com</a>
+<button class="p-2 text-on-surface relative">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+</header>
+<!-- Main Content -->
+<main class="flex-grow max-w-container-max mx-auto w-full px-margin-mobile md:px-margin-desktop py-stack-lg md:py-margin-desktop mt-16 md:mt-0">
+<!-- Breadcrumbs -->
+<nav aria-label="Breadcrumb" class="flex text-on-surface-variant font-body-sm text-body-sm mb-stack-lg">
+<ol class="inline-flex items-center space-x-1 md:space-x-3">
+<li class="inline-flex items-center">
+<a class="hover:text-secondary transition-colors" href="#">Home</a>
+</li>
+<li>
+<div class="flex items-center">
+<span class="material-symbols-outlined mx-1 text-sm">chevron_right</span>
+<a class="hover:text-secondary transition-colors" href="#">Electronics</a>
+</div>
+</li>
+<li>
+<div class="flex items-center">
+<span class="material-symbols-outlined mx-1 text-sm">chevron_right</span>
+<a class="hover:text-secondary transition-colors" href="#">Smartphones</a>
+</div>
+</li>
+<li aria-current="page">
+<div class="flex items-center">
+<span class="material-symbols-outlined mx-1 text-sm">chevron_right</span>
+<span class="text-on-surface">Zenith Pro Max</span>
+</div>
+</li>
+</ol>
+</nav>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Product Gallery (Left) -->
+<div class="lg:col-span-7 flex flex-col md:flex-row gap-stack-md">
+<!-- Thumbnails (Desktop side, Mobile bottom via flex-col-reverse below) -->
+<div class="hidden md:flex flex-col gap-stack-sm w-24 flex-shrink-0">
+<button class="border-2 border-secondary rounded-lg overflow-hidden h-24 bg-surface-bright flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="A detailed close-up shot of a sleek, premium smartphone in a sophisticated deep space black color, resting on a minimalist white pedestal. High-key studio lighting highlights the polished metal edges and pristine glass back. The aesthetic is ultra-modern, clean, and highly technical, perfect for a high-end electronics e-commerce site." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmUuuuDHMNSyj5tgWI72PvS-h4DTduqaOWWC0nKnut90Y1-Or73qTPkmn19Z8Mp2EcgzoiGkq4c-sBHHYdgmjWB5PrtTROOHE_NWRDZ0jJASvNezFw5WslFbA91hpLEMf_BgDqpoE1kGKmiTN3aN3WDZAVrYRAvlymrxLcf4xu6W6sG1efoLOI1PHLZNfIfwEess28eGPbwbBlk6TBte-1WrhD_RxvN-hmv_aBng5EmYi2K084c9tHFA"/>
+</button>
+<button class="border border-outline-variant hover:border-secondary rounded-lg overflow-hidden h-24 bg-surface-bright flex items-center justify-center transition-colors">
+<img class="w-full h-full object-cover" data-alt="A stylized product shot showing the impressive multi-lens camera array on the back of a luxury smartphone. The setting is a clean, bright studio with subtle reflections emphasizing the glass and metallic textures. The mood is premium and cutting-edge, suitable for a professional marketplace." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYNp8vsJKsvimIi97V0aIyJGgeHIFGZ2falR_OCjk5cnwVL9CMbX_Cr1GM2pHqBPGvaWg9Qr7RUoOWPK1PdjSituHLCjDMEdWY16fDXemzssqQaV48suDi5b5RWXB40f5qkZSnrmA72jvHWXOC7IsRtOvSHsXlMfNU70j57J9ieDUy1dK_cSQJ5H_EC_p98pAp7RXq30l4-IwjkgPDTLRKoCwbyuuX4dBnkGTgGXThzwZWzeUh4QC20w"/>
+</button>
+<button class="border border-outline-variant hover:border-secondary rounded-lg overflow-hidden h-24 bg-surface-bright flex items-center justify-center transition-colors">
+<img class="w-full h-full object-cover" data-alt="An angled view of an ultra-thin flagship smartphone displaying a vibrant, colorful abstract wallpaper on its edge-to-edge screen. The lighting is soft and diffused, creating a premium light-mode corporate aesthetic. The device looks elegant and powerful." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-m4P0UZMBCQtQsZrp35yKi72IioTCBJkPN_jrDVQtJEbVKBjqNi5e9GzQb8vtyBEM-ubnzA4hdT-XuBJU__byIFip2Xt9bZG3aGOdXqzr46u2598P3mN2GvuONPzh3Mhfd-rnI4x-Gxgoc2CbCs9rssyR4skDG7C_juCNk3bpCZVpd5YD1OH7jaSpE_yaJ3Wm-osInYpEVCMjS_XrqjqZE8lAhPcRNZLzthauvpkoYib9gEgOLdSEYA"/>
+</button>
+<button class="border border-outline-variant hover:border-secondary rounded-lg overflow-hidden h-24 bg-surface-bright flex items-center justify-center transition-colors">
+<img class="w-full h-full object-cover" data-alt="A lifestyle shot of a modern smartphone resting on a sleek wooden desk next to a minimalist notebook and pen. Natural, bright lighting fills the scene, conveying a sense of productivity and professional elegance typical of modern high-trust e-commerce imagery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSQCB0LlGxP5InSS6MrTOG421oOBubkwX4AI5pODq4JoN1tsukGr5vmjrj-7EopMxcsS0u6n9Bbu6-_ig5EXRwj_ETGLOvRN1URb9EM5p2qnp5WK8oB5dqsCuCM6qwAJI62k-DMelYwxtZ-6APcg-nG0Uh-OdeHtgKLId8TY-GgpjeIfdTllwhW5f2zHK1HQV45BT2G4e28P56XOMqW3n5daSzwCJ0JOLK5n-gJSoZELVl9UgVUmZnmQ"/>
+</button>
+</div>
+<!-- Main Image -->
+<div class="flex-grow bg-surface-white rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.04)] overflow-hidden flex items-center justify-center relative aspect-square md:aspect-auto md:h-[600px] border border-surface-container">
+<span class="absolute top-4 left-4 bg-tertiary-container text-on-tertiary-container font-label-sm text-label-sm px-3 py-1 rounded-full z-10">-15% OFF</span>
+<button class="absolute top-4 right-4 bg-surface-white p-2 rounded-full shadow-sm hover:text-vibrant-accent transition-colors z-10 text-outline"><span class="material-symbols-outlined">favorite</span></button>
+<img class="w-full h-full object-contain p-8" data-alt="A striking hero product shot of the Zenith Pro Max smartphone standing vertically against a pristine, soft light gray background. The lighting is immaculate, creating subtle gradients across the device's matte glass back and highly polished metal frame. The aesthetic is peak minimalism, conveying luxury, reliability, and advanced technology." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQOp5cFii1ITlWNTCVFl1Ajeq1yIRGTgsIIb28HCX2mk1nVXfWYic8EgRIEu8qB56VxZYb52opVwc-V1ibXAv35sssvNUxdJvTa1s6IN_Ft1pRV4StqY7r_I1A8jBYuIAFFug8tXwKHcCmQyF9_1TUzLaKe8YmGAls9GM4DC_XdfNd6ZJy7JTQiykrt6M6LdxVNHBji8FMIPiZW0e-k_lWjvZNpnxVQ26a9MOwuW6KXTH8eWUseZTSgw"/>
+</div>
+<!-- Thumbnails Mobile -->
+<div class="flex md:hidden gap-stack-sm overflow-x-auto pb-2 snap-x">
+<button class="border-2 border-secondary rounded-lg overflow-hidden h-20 w-20 flex-shrink-0 snap-start bg-surface-bright flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="A detailed close-up shot of a sleek, premium smartphone in a sophisticated deep space black color, resting on a minimalist white pedestal. High-key studio lighting highlights the polished metal edges and pristine glass back." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaqzRj_uPhUlaxkDFNns5xmAnmKeULSvCWgvRAVtMeYoUHQ8nXFic4xdki2QoyRDJsM0sCJtq-YqYQ6YD3vO1BscYUWywqtQfB-K50E3u3IF2ySZNWhD9yX_oYEIUJuuLsgCta6zYoRQR6tg-o5Bsxbnmx8q-Jvcr4-P2Mz6yk9N6rkITIgOucHlKUWxovmnPxrWSmqYkzm1oH9b5acmEDF8lEYUKO_90Lpvw79BGfoS6kHgMMjdHoMQ"/>
+</button>
+<button class="border border-outline-variant rounded-lg overflow-hidden h-20 w-20 flex-shrink-0 snap-start bg-surface-bright flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="A stylized product shot showing the impressive multi-lens camera array on the back of a luxury smartphone." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJV7nPIn74yqv2Oyc6ZDO6o9n6anxDxD1gvg9IrrddZCL-CP4nXqDk4B3loHgJwcfXA7eHJiGg3KCi9C1hMxvwOJ9GG8lwezh_r7kUkL45LirdXPN6wCrhj5cWG7KY64tLhUYF7XaeQYOgf9d-9gqSwCGWqksTWHt1Wc9xk8U0DBq8OggGW-SZw3ePkBP40zGPrjtnUssLOm6H9zWJaadABvpCxg45tmTo-4H7gbNqyjJquIL2_45Lrw"/>
+</button>
+<button class="border border-outline-variant rounded-lg overflow-hidden h-20 w-20 flex-shrink-0 snap-start bg-surface-bright flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="An angled view of an ultra-thin flagship smartphone displaying a vibrant, colorful abstract wallpaper on its edge-to-edge screen." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqjdIJZBfziWbBUcaOReeA3Cnfo9bdG193ovvXxk6QgaOd7OYSTR3aNDFuami-K3y2iqEA04ybLIsRFoO3GqbvXxFAFE2DbGiedHjOkRkGNejK2utYOZJlrhWJZJLHXpEF6t3XB_hlWwNR3PPcIOrL9SHtP8DI2RiuIFjRvVvo_OEnbv1E5uFkE87vvn0jvJ5WcFow64MGHvNoRGGeiQUCerQKntxZ2AX9BIvVhs_5z7ukGQcegCbtzg"/>
+</button>
+</div>
+</div>
+<!-- Product Info (Right) -->
+<div class="lg:col-span-5 flex flex-col gap-stack-lg">
+<!-- Title & Rating -->
+<div class="flex flex-col gap-stack-sm">
+<a class="text-secondary font-label-md text-label-md hover:underline" href="#">Zenith Tech</a>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Zenith Pro Max - 512GB, Deep Space Black</h1>
+<div class="flex items-center gap-2 mt-1">
+<div class="flex text-vibrant-accent">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 20px;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 20px;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 20px;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 20px;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 20px;">autorenew</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">4.8</span>
+<a class="font-body-sm text-body-sm text-on-surface-variant underline hover:text-secondary ml-2" href="#reviews">(1,284 Reviews)</a>
+</div>
+</div>
+<!-- Price -->
+<div class="flex flex-col gap-1 py-stack-sm border-y border-surface-variant">
+<div class="flex items-baseline gap-3">
+<span class="font-headline-xl text-headline-xl text-on-surface">$1,099.00</span>
+<span class="font-headline-sm text-headline-sm text-outline-variant line-through">$1,299.00</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Inclusive of all taxes. Free shipping available.</p>
+</div>
+<!-- Options -->
+<div class="flex flex-col gap-stack-md">
+<!-- Color -->
+<div>
+<h3 class="font-label-md text-label-md text-on-surface mb-2">Color: <span class="text-on-surface-variant font-normal">Deep Space Black</span></h3>
+<div class="flex gap-3">
+<button aria-label="Deep Space Black" class="w-10 h-10 rounded-full border-2 border-secondary bg-pure-black ring-2 ring-offset-2 ring-transparent ring-offset-background"></button>
+<button aria-label="Lunar Silver" class="w-10 h-10 rounded-full border border-outline-variant bg-surface-variant hover:border-outline transition-colors"></button>
+<button aria-label="Desert Titanium" class="w-10 h-10 rounded-full border border-outline-variant bg-[#F0E6D2] hover:border-outline transition-colors"></button>
+</div>
+</div>
+<!-- Storage -->
+<div>
+<h3 class="font-label-md text-label-md text-on-surface mb-2">Storage:</h3>
+<div class="grid grid-cols-3 gap-3">
+<button class="border border-outline-variant rounded-lg py-2 font-body-sm text-body-sm text-on-surface hover:border-secondary transition-colors">256GB</button>
+<button class="border-2 border-secondary bg-secondary-fixed text-on-secondary-fixed rounded-lg py-2 font-label-md text-label-md">512GB</button>
+<button class="border border-outline-variant rounded-lg py-2 font-body-sm text-body-sm text-on-surface hover:border-secondary transition-colors">1TB</button>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col gap-stack-md pt-stack-sm">
+<div class="flex gap-4">
+<div class="flex items-center border border-outline-variant rounded-lg w-32 justify-between px-3 bg-surface-white">
+<button class="text-on-surface-variant hover:text-secondary py-2"><span class="material-symbols-outlined" style="font-size: 20px;">remove</span></button>
+<span class="font-label-md text-label-md">1</span>
+<button class="text-on-surface-variant hover:text-secondary py-2"><span class="material-symbols-outlined" style="font-size: 20px;">add</span></button>
+</div>
+<button class="flex-grow bg-surface-white border-2 border-secondary text-secondary font-label-md text-label-md py-3 rounded-lg hover:bg-secondary-fixed transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">shopping_cart</span>
+                            Add to Cart
+                        </button>
+</div>
+<button class="w-full bg-secondary text-on-secondary font-label-md text-label-md py-3 rounded-lg hover:bg-primary-container transition-colors shadow-sm">
+                        Buy Now
+                    </button>
+</div>
+<!-- Delivery Pin Code Checker -->
+<div class="bg-surface-container-low p-stack-md rounded-xl mt-2 border border-surface-variant">
+<div class="flex items-center gap-2 mb-3 text-on-surface">
+<span class="material-symbols-outlined">local_shipping</span>
+<h3 class="font-label-md text-label-md">Check Delivery Availability</h3>
+</div>
+<div class="flex gap-2">
+<input class="flex-grow border border-outline-variant rounded-lg px-3 py-2 font-body-sm text-body-sm focus:border-secondary focus:ring-1 focus:ring-secondary bg-surface-white" placeholder="Enter ZIP / PIN code" type="text"/>
+<button class="bg-surface-variant text-on-surface-variant px-4 py-2 rounded-lg font-label-md text-label-md hover:bg-outline-variant transition-colors">Check</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 text-xs">Expected delivery in 2-4 business days.</p>
+</div>
+<!-- Key Features List -->
+<ul class="flex flex-col gap-2 font-body-sm text-body-sm text-on-surface-variant mt-2">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary" style="font-size: 18px;">check_circle</span> 6.8" AMOLED 120Hz Display</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary" style="font-size: 18px;">check_circle</span> 200MP Quad Camera System</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary" style="font-size: 18px;">check_circle</span> Snapdragon 8 Gen 3 Processor</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary" style="font-size: 18px;">check_circle</span> 5000mAh Battery with 120W Fast Charging</li>
+</ul>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-primary dark:bg-surface-container-lowest text-on-primary dark:text-on-surface font-body-sm text-body-sm w-full py-stack-lg border-t border-outline-variant flat no shadows">
+<div class="w-full px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-container-max mx-auto">
+<div class="flex flex-col gap-stack-sm">
+<span class="font-headline-sm text-headline-sm text-on-primary font-bold mb-2">Mds.com</span>
+<p class="opacity-80">Your trusted marketplace for premium goods.</p>
+</div>
+<div class="flex flex-col gap-stack-sm">
+<span class="font-label-md text-label-md font-bold mb-1">Company</span>
+<a class="text-on-primary/80 hover:text-on-primary hover:underline decoration-1 underline-offset-4 transition-opacity" href="#">About Us</a>
+<a class="text-on-primary/80 hover:text-on-primary hover:underline decoration-1 underline-offset-4 transition-opacity" href="#">Contact Support</a>
+</div>
+<div class="flex flex-col gap-stack-sm">
+<span class="font-label-md text-label-md font-bold mb-1">Legal</span>
+<a class="text-on-primary/80 hover:text-on-primary hover:underline decoration-1 underline-offset-4 transition-opacity" href="#">Privacy Policy</a>
+<a class="text-on-primary/80 hover:text-on-primary hover:underline decoration-1 underline-offset-4 transition-opacity" href="#">Terms of Service</a>
+</div>
+<div class="flex flex-col gap-stack-sm">
+<span class="font-label-md text-label-md font-bold mb-1">Services</span>
+<a class="text-on-primary/80 hover:text-on-primary hover:underline decoration-1 underline-offset-4 transition-opacity" href="#">Shipping Info</a>
+<a class="text-on-primary/80 hover:text-on-primary hover:underline decoration-1 underline-offset-4 transition-opacity" href="#">Sell on Mds</a>
+</div>
+</div>
+<div class="w-full px-margin-desktop max-w-container-max mx-auto mt-stack-lg pt-stack-sm border-t border-on-primary/20 text-center opacity-70">
+            © 2024 Mds.com Marketplace. All rights reserved.
+        </div>
+</footer>
+</body></html>

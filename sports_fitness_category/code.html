@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sports &amp; Fitness - Mds.com</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#ffffff",
+                        "on-surface-variant": "#454652",
+                        "on-error-container": "#93000a",
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface-tint": "#4c56af",
+                        "on-surface": "#191c1d",
+                        "surface-variant": "#e1e3e4",
+                        "primary-fixed-dim": "#bdc2ff",
+                        "inverse-surface": "#2e3132",
+                        "on-secondary-fixed": "#000f5d",
+                        "primary-fixed": "#e0e0ff",
+                        "primary-container": "#1a237e",
+                        "on-primary-fixed": "#000767",
+                        "on-tertiary-fixed": "#390c00",
+                        "on-background": "#191c1d",
+                        "surface": "#f8f9fa",
+                        "surface-bright": "#f8f9fa",
+                        "on-tertiary-container": "#e17c5a",
+                        "secondary": "#1c3fe7",
+                        "background": "#f8f9fa",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#405cff",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#dee0ff",
+                        "surface-dim": "#d9dadb",
+                        "outline-variant": "#c6c5d4",
+                        "surface-container": "#edeeef",
+                        "on-secondary-container": "#f5f3ff",
+                        "on-secondary": "#ffffff",
+                        "surface-container-high": "#e7e8e9",
+                        "deep-navy": "#1A237E",
+                        "secondary-fixed-dim": "#bbc3ff",
+                        "on-tertiary-fixed-variant": "#7b2e12",
+                        "on-secondary-fixed-variant": "#002ccd",
+                        "pure-black": "#000000",
+                        "on-primary-container": "#8690ee",
+                        "primary": "#000666",
+                        "vibrant-accent": "#3D5AFE",
+                        "error-container": "#ffdad6",
+                        "tertiary": "#380b00",
+                        "tertiary-fixed": "#ffdbd0",
+                        "on-primary-fixed-variant": "#343d96",
+                        "surface-container-highest": "#e1e3e4",
+                        "inverse-primary": "#bdc2ff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f3f4f5",
+                        "tertiary-container": "#5c1800",
+                        "surface-white": "#FFFFFF",
+                        "error": "#ba1a1a",
+                        "outline": "#767683",
+                        "tertiary-fixed-dim": "#ffb59d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-md": "16px",
+                        "margin-desktop": "48px",
+                        "stack-lg": "32px",
+                        "gutter": "24px",
+                        "stack-sm": "8px",
+                        "base": "8px",
+                        "container-max": "1280px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "label-md": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "body-sm": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "headline-xl": ["Hanken Grotesk"],
+                        "label-sm": ["Hanken Grotesk"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "headline-sm": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "headline-xl": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col pt-20">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 flex items-center justify-between px-margin-desktop h-20 max-w-container-max mx-auto bg-surface-white dark:bg-surface shadow-sm shadow-sm">
+<div class="flex items-center gap-8">
+<a class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed" href="#">Mds.com</a>
+<div class="hidden md:flex gap-6 items-center">
+<a class="text-on-surface-variant hover:text-secondary font-body-md text-body-md transition-all duration-200 hover:opacity-80 scale-95 active:scale-100 transition-transform" href="#">Fashion</a>
+<a class="text-on-surface-variant hover:text-secondary font-body-md text-body-md transition-all duration-200 hover:opacity-80 scale-95 active:scale-100 transition-transform" href="#">Footwear</a>
+<a class="text-on-surface-variant hover:text-secondary font-body-md text-body-md transition-all duration-200 hover:opacity-80 scale-95 active:scale-100 transition-transform" href="#">Electronics</a>
+<a class="text-on-surface-variant hover:text-secondary font-body-md text-body-md transition-all duration-200 hover:opacity-80 scale-95 active:scale-100 transition-transform" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-secondary font-body-md text-body-md transition-all duration-200 hover:opacity-80 scale-95 active:scale-100 transition-transform" href="#">Deals</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<input class="border border-outline-variant rounded-full py-2 pl-4 pr-10 focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary text-body-sm font-body-sm bg-surface-container-lowest" placeholder="Search..." type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">search</span>
+</div>
+<button class="text-secondary dark:text-secondary-fixed-dim transition-all duration-200 hover:opacity-80 scale-95 active:scale-100 transition-transform">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<button class="text-secondary dark:text-secondary-fixed-dim transition-all duration-200 hover:opacity-80 scale-95 active:scale-100 transition-transform">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+<button class="text-secondary dark:text-secondary-fixed-dim transition-all duration-200 hover:opacity-80 scale-95 active:scale-100 transition-transform">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg flex flex-col md:flex-row gap-gutter">
+<!-- Sidebar Filters -->
+<aside class="w-full md:w-64 flex-shrink-0 mb-stack-lg md:mb-0">
+<div class="bg-surface-white rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.04)] p-stack-md sticky top-28 border border-surface-container-highest">
+<h2 class="font-headline-sm text-headline-sm mb-stack-md border-b border-surface-container pb-stack-sm text-primary">Filters</h2>
+<!-- Category Filter -->
+<div class="mb-stack-md">
+<h3 class="font-label-md text-label-md text-on-surface-variant mb-stack-sm">Category</h3>
+<div class="flex flex-col gap-2">
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="rounded border-outline-variant text-secondary focus:ring-secondary bg-surface" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface group-hover:text-secondary transition-colors">Equipment</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="rounded border-outline-variant text-secondary focus:ring-secondary bg-surface" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface group-hover:text-secondary transition-colors">Apparel</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="rounded border-outline-variant text-secondary focus:ring-secondary bg-surface" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface group-hover:text-secondary transition-colors">Accessories</span>
+</label>
+</div>
+</div>
+<!-- Brand Filter -->
+<div class="mb-stack-md">
+<h3 class="font-label-md text-label-md text-on-surface-variant mb-stack-sm">Brand</h3>
+<div class="flex flex-col gap-2">
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="rounded border-outline-variant text-secondary focus:ring-secondary bg-surface" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface group-hover:text-secondary transition-colors">Aura Fitness</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="rounded border-outline-variant text-secondary focus:ring-secondary bg-surface" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface group-hover:text-secondary transition-colors">Peak Performance</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="rounded border-outline-variant text-secondary focus:ring-secondary bg-surface" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface group-hover:text-secondary transition-colors">Mds Sports</span>
+</label>
+</div>
+</div>
+<!-- Price Range -->
+<div class="mb-stack-md">
+<h3 class="font-label-md text-label-md text-on-surface-variant mb-stack-sm">Price Range</h3>
+<div class="flex items-center gap-2">
+<input class="w-full border border-outline-variant rounded-md py-1 px-2 focus:border-secondary focus:ring-1 focus:ring-secondary text-body-sm font-body-sm bg-surface" placeholder="Min" type="number"/>
+<span class="text-on-surface-variant">-</span>
+<input class="w-full border border-outline-variant rounded-md py-1 px-2 focus:border-secondary focus:ring-1 focus:ring-secondary text-body-sm font-body-sm bg-surface" placeholder="Max" type="number"/>
+</div>
+</div>
+<!-- Rating -->
+<div>
+<h3 class="font-label-md text-label-md text-on-surface-variant mb-stack-sm">Rating</h3>
+<div class="flex flex-col gap-2">
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="border-outline-variant text-secondary focus:ring-secondary bg-surface" name="rating" type="radio"/>
+<div class="flex items-center text-secondary">
+<span class="material-symbols-outlined text-[16px] fill">star</span>
+<span class="material-symbols-outlined text-[16px] fill">star</span>
+<span class="material-symbols-outlined text-[16px] fill">star</span>
+<span class="material-symbols-outlined text-[16px] fill">star</span>
+<span class="material-symbols-outlined text-[16px] fill">star</span>
+<span class="font-body-sm text-body-sm text-on-surface ml-1 group-hover:text-secondary transition-colors">5.0</span>
+</div>
+</label>
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="border-outline-variant text-secondary focus:ring-secondary bg-surface" name="rating" type="radio"/>
+<div class="flex items-center text-secondary">
+<span class="material-symbols-outlined text-[16px] fill">star</span>
+<span class="material-symbols-outlined text-[16px] fill">star</span>
+<span class="material-symbols-outlined text-[16px] fill">star</span>
+<span class="material-symbols-outlined text-[16px] fill">star</span>
+<span class="material-symbols-outlined text-[16px] text-outline-variant">star</span>
+<span class="font-body-sm text-body-sm text-on-surface ml-1 group-hover:text-secondary transition-colors">4.0+</span>
+</div>
+</label>
+</div>
+</div>
+</div>
+</aside>
+<!-- Product Grid Area -->
+<section class="flex-grow">
+<!-- Header -->
+<div class="mb-stack-lg">
+<h1 class="font-headline-xl text-headline-xl text-primary mb-stack-sm md:text-headline-xl text-headline-lg-mobile">Sports &amp; Fitness</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Gear up with our selection of premium fitness equipment, high-performance apparel, and sports accessories.</p>
+</div>
+<!-- Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Product Card 1 -->
+<article class="bg-surface-white rounded-xl overflow-hidden shadow-[0px_4px_20px_rgba(0,0,0,0.04)] hover:-translate-y-1 hover:shadow-[0px_8px_32px_rgba(0,0,0,0.08)] transition-all duration-300 group border border-surface-container-highest cursor-pointer flex flex-col">
+<div class="relative aspect-[3/4] overflow-hidden bg-surface-container-low">
+<img alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZQRiLAZ6rpzud2Px248it9LOFpjzCmZpNJBJnhFdinZjQt8E0c_UebRj0Ek9BldSw6oIEsYHMZHL2ozuvCivRHjrnKoEJW2NYvLo9ot_qi-MeJ3_KTHBsM4-qI_JzM_8TgXKJWgkGcl0_IWSoRN2PhURYURHxKJaz33RPsQccE08ZhWOHJwTkvd-DO8Dx8vd95_7xntprqvo4btctci1A4N6EtwFotzktEik6KWfHm4vaV1kK2u_XRA"/>
+<button class="absolute top-3 right-3 bg-surface-white/90 p-2 rounded-full text-on-surface-variant hover:text-secondary transition-colors backdrop-blur-sm">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<div class="p-stack-md flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1">Aura Pro Treadmill</h3>
+</div>
+<div class="flex items-center gap-1 mb-stack-sm text-secondary">
+<span class="material-symbols-outlined text-[16px] fill">star</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant pt-0.5">4.9</span>
+</div>
+<div class="mt-auto flex items-center justify-between">
+<span class="font-body-lg text-body-lg font-bold text-primary">$899.00</span>
+<button class="bg-secondary text-on-secondary px-4 py-2 rounded-lg font-label-md text-label-md hover:bg-secondary-container hover:text-on-secondary-container transition-colors shadow-sm">Add to Cart</button>
+</div>
+</div>
+</article>
+<!-- Product Card 2 -->
+<article class="bg-surface-white rounded-xl overflow-hidden shadow-[0px_4px_20px_rgba(0,0,0,0.04)] hover:-translate-y-1 hover:shadow-[0px_8px_32px_rgba(0,0,0,0.08)] transition-all duration-300 group border border-surface-container-highest cursor-pointer flex flex-col">
+<div class="relative aspect-[3/4] overflow-hidden bg-surface-container-low">
+<img alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATUxXy0oQEX7xciQianYp0uV5poic_j-XBKNV6-IF-KsFDRffuMlV9kgrFvbyMjL1el2ovhQmahZm8XDCWInf-6vawo7uxbcGOPSdlZrNaFTj-tDrQVJLXe066_xCuvMGxcIu-ZgANnVentjbXe8B6BQnl_BKFEiGooPnxUktGhobGxe-jL6cKN2zo6PYxBH-GmVlppKV6Lr90NZkgB7vVKcKYhb5u4F1O4C24Mczz-BX2Rn68_aiTEQ"/>
+<button class="absolute top-3 right-3 bg-surface-white/90 p-2 rounded-full text-on-surface-variant hover:text-secondary transition-colors backdrop-blur-sm">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<div class="p-stack-md flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1">Performance Leggings</h3>
+</div>
+<div class="flex items-center gap-1 mb-stack-sm text-secondary">
+<span class="material-symbols-outlined text-[16px] fill">star</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant pt-0.5">4.8</span>
+</div>
+<div class="mt-auto flex items-center justify-between">
+<span class="font-body-lg text-body-lg font-bold text-primary">$55.00</span>
+<button class="bg-secondary text-on-secondary px-4 py-2 rounded-lg font-label-md text-label-md hover:bg-secondary-container hover:text-on-secondary-container transition-colors shadow-sm">Add to Cart</button>
+</div>
+</div>
+</article>
+<!-- Product Card 3 -->
+<article class="bg-surface-white rounded-xl overflow-hidden shadow-[0px_4px_20px_rgba(0,0,0,0.04)] hover:-translate-y-1 hover:shadow-[0px_8px_32px_rgba(0,0,0,0.08)] transition-all duration-300 group border border-surface-container-highest cursor-pointer flex flex-col">
+<div class="relative aspect-[3/4] overflow-hidden bg-surface-container-low">
+<img alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxCT3-pdijZ_KDMmP_fgOXglhbCf65N2JqPR7xTDtxWF0JL_wywIX8zr2SOrfQoPh5lbNMejwbLf99g-2ilLvX34eLM-62cDj2d9KqHK4rJs570pEkzMVQWxDqCX2TPLayVgo-90P-YInAmGj7ekggzIkctWvh3Ax8cr2zXoayQ393EXy7dJ5efMmhULAoPrpKeQ2y7mTsmQKFSFzjaiiu0Gto2YU8q29vvZk_BI37fwUYF-F0IPVeSA"/>
+<button class="absolute top-3 right-3 bg-surface-white/90 p-2 rounded-full text-on-surface-variant hover:text-secondary transition-colors backdrop-blur-sm">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<div class="p-stack-md flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1">Adjustable Dumbbell Set</h3>
+</div>
+<div class="flex items-center gap-1 mb-stack-sm text-secondary">
+<span class="material-symbols-outlined text-[16px] fill">star</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant pt-0.5">4.7</span>
+</div>
+<div class="mt-auto flex items-center justify-between">
+<span class="font-body-lg text-body-lg font-bold text-primary">$199.00</span>
+<button class="bg-secondary text-on-secondary px-4 py-2 rounded-lg font-label-md text-label-md hover:bg-secondary-container hover:text-on-secondary-container transition-colors shadow-sm">Add to Cart</button>
+</div>
+</div>
+</article>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-stack-lg border-t border-outline-variant bg-primary dark:bg-surface-container-lowest mt-auto">
+<div class="w-full px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1 flex flex-col gap-4">
+<span class="font-headline-sm text-headline-sm text-on-primary">Mds.com</span>
+<p class="font-body-sm text-body-sm text-on-primary/80">© 2024 Mds.com Marketplace. All rights reserved.</p>
+</div>
+<div class="col-span-1 md:col-span-3 grid grid-cols-2 sm:grid-cols-3 gap-8">
+<div class="flex flex-col gap-2">
+<a class="font-body-sm text-body-sm text-on-primary/80 hover:text-on-primary hover:underline decoration-1 underline-offset-4 opacity-100 hover:opacity-80 transition-opacity" href="#">About Us</a>
+<a class="font-body-sm text-body-sm text-on-primary/80 hover:text-on-primary hover:underline decoration-1 underline-offset-4 opacity-100 hover:opacity-80 transition-opacity" href="#">Contact Support</a>
+</div>
+<div class="flex flex-col gap-2">
+<a class="font-body-sm text-body-sm text-on-primary/80 hover:text-on-primary hover:underline decoration-1 underline-offset-4 opacity-100 hover:opacity-80 transition-opacity" href="#">Privacy Policy</a>
+<a class="font-body-sm text-body-sm text-on-primary/80 hover:text-on-primary hover:underline decoration-1 underline-offset-4 opacity-100 hover:opacity-80 transition-opacity" href="#">Terms of Service</a>
+</div>
+<div class="flex flex-col gap-2">
+<a class="font-body-sm text-body-sm text-on-primary/80 hover:text-on-primary hover:underline decoration-1 underline-offset-4 opacity-100 hover:opacity-80 transition-opacity" href="#">Shipping Info</a>
+<a class="font-body-sm text-body-sm text-on-primary/80 hover:text-on-primary hover:underline decoration-1 underline-offset-4 opacity-100 hover:opacity-80 transition-opacity" href="#">Sell on Mds</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

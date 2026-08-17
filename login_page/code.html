@@ -1,0 +1,293 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Login - Mds.com</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "inverse-surface": "#2e3132",
+                      "deep-navy": "#1A237E",
+                      "surface": "#f8f9fa",
+                      "surface-tint": "#4c56af",
+                      "surface-container-high": "#e7e8e9",
+                      "tertiary-container": "#5c1800",
+                      "secondary-fixed-dim": "#bbc3ff",
+                      "pure-black": "#000000",
+                      "surface-container-highest": "#e1e3e4",
+                      "background": "#f8f9fa",
+                      "on-error": "#ffffff",
+                      "inverse-primary": "#bdc2ff",
+                      "surface-container-lowest": "#ffffff",
+                      "primary-container": "#1a237e",
+                      "vibrant-accent": "#3D5AFE",
+                      "on-secondary-fixed": "#000f5d",
+                      "on-background": "#191c1d",
+                      "tertiary-fixed": "#ffdbd0",
+                      "on-secondary-fixed-variant": "#002ccd",
+                      "secondary": "#1c3fe7",
+                      "error": "#ba1a1a",
+                      "secondary-container": "#405cff",
+                      "primary-fixed-dim": "#bdc2ff",
+                      "on-primary": "#ffffff",
+                      "on-tertiary-fixed": "#390c00",
+                      "on-error-container": "#93000a",
+                      "surface-bright": "#f8f9fa",
+                      "on-tertiary-container": "#e17c5a",
+                      "surface-container": "#edeeef",
+                      "outline-variant": "#c6c5d4",
+                      "surface-container-low": "#f3f4f5",
+                      "inverse-on-surface": "#f0f1f2",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-fixed": "#000767",
+                      "on-surface": "#191c1d",
+                      "on-tertiary-fixed-variant": "#7b2e12",
+                      "surface-variant": "#e1e3e4",
+                      "primary": "#000666",
+                      "surface-white": "#FFFFFF",
+                      "surface-dim": "#d9dadb",
+                      "secondary-fixed": "#dee0ff",
+                      "on-primary-fixed-variant": "#343d96",
+                      "primary-fixed": "#e0e0ff",
+                      "on-secondary-container": "#f5f3ff",
+                      "on-primary-container": "#8690ee",
+                      "tertiary": "#380b00",
+                      "on-surface-variant": "#454652",
+                      "on-secondary": "#ffffff",
+                      "outline": "#767683",
+                      "tertiary-fixed-dim": "#ffb59d",
+                      "error-container": "#ffdad6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "base": "8px",
+                      "container-max": "1280px",
+                      "stack-sm": "8px",
+                      "margin-desktop": "48px",
+                      "stack-md": "16px",
+                      "margin-mobile": "16px",
+                      "gutter": "24px",
+                      "stack-lg": "32px"
+              },
+              "fontFamily": {
+                      "body-md": [
+                              "Hanken Grotesk"
+                      ],
+                      "label-md": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-sm": [
+                              "Hanken Grotesk"
+                      ],
+                      "label-sm": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-lg-mobile": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-xl": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-md": [
+                              "Hanken Grotesk"
+                      ],
+                      "body-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "body-sm": [
+                              "Hanken Grotesk"
+                      ]
+              },
+              "fontSize": {
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-sm": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-xl": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Hanken Grotesk', sans-serif;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex antialiased">
+<!-- Main Container: Split Layout on Desktop -->
+<main class="flex-1 flex flex-col md:flex-row min-h-screen">
+<!-- Left Side: Image / Branding -->
+
+<!-- Right Side: Login Form -->
+<section class="flex-1 flex items-center justify-center p-margin-mobile md:p-margin-desktop bg-surface-white relative z-10 shadow-[-10px_0_30px_rgba(0,0,0,0.03)] md:px-24">
+<div class="w-full max-w-md">
+<!-- Logo -->
+<div class="mb-stack-lg flex justify-center md:justify-start">
+<img alt="Mds.com Logo" class="h-16 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AP1WRLufuKCK4MxERvKCDjQ-QhO1xd40fY-yWtn6BEsdQh4etmCWL1dS61M316P1cp0_p1JGuEg9V65vFvVFnNNTsbXvYqFI5YCkehkpkZ2E6V4zWMfvGKq83iBvF6Bg90vHpSQ7ivbiNl-fWBcHDxh5HUdegYq2LgL6lkAvFfqk3ZCs327xQ_m062BM22zWewra-SdCiU4rKLGNjnDeH8dWl86RVysu2-azoT43GE4T3uRQfDeOCXCbysQI2HRN">
+</div>
+<!-- Header -->
+<div class="mb-stack-lg text-center md:text-left"><h1 class="font-headline-lg text-headline-lg text-deep-navy mb-2 tracking-tight">Welcome Back</h1>
+<p class="font-body-md text-body-md text-on-surface-variant opacity-80">Please enter your details to sign in.</p></div>
+<!-- Form -->
+<form action="#" class="space-y-stack-md" method="POST"><!-- Email Field -->
+<div class="mb-8">
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-2" for="email">Email Address</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline text-sm" data-icon="mail" style="font-variation-settings: &quot;FILL&quot; 0;">mail</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-3 border border-outline-variant rounded-DEFAULT bg-surface-white text-on-surface font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-deep-navy focus:border-deep-navy transition-all duration-200" id="email" name="email" placeholder="name@company.com" required="" type="email">
+</div>
+</div>
+<!-- Password Field -->
+<div class="mb-8">
+<div class="flex items-center justify-between mb-2">
+<label class="block font-label-sm text-label-sm text-on-surface-variant" for="password">Password</label>
+<a class="font-label-sm text-label-sm text-secondary hover:text-vibrant-accent transition-colors duration-200" href="#">Forgot Password?</a>
+</div>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline text-sm" data-icon="lock" style="font-variation-settings: &quot;FILL&quot; 0;">lock</span>
+</div>
+<input class="block w-full pl-10 pr-10 py-3 border border-outline-variant rounded-DEFAULT bg-surface-white text-on-surface font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-deep-navy focus:border-deep-navy transition-all duration-200" id="password" name="password" placeholder="••••••••" required="" type="password">
+<button class="absolute inset-y-0 right-0 pr-3 flex items-center text-outline hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-sm" data-icon="visibility" style="font-variation-settings: &quot;FILL&quot; 0;">visibility</span>
+</button>
+</div>
+</div>
+<!-- Checkbox -->
+<div class="flex items-center mb-8">
+<input class="h-4 w-4 text-deep-navy focus:ring-deep-navy border-outline-variant rounded-sm cursor-pointer" id="remember-me" name="remember-me" type="checkbox">
+<label class="ml-2 block font-body-sm text-body-sm text-on-surface-variant cursor-pointer" for="remember-me">
+                            Keep me signed in
+                        </label>
+</div>
+<!-- Submit Button -->
+<div class="pt-2">
+<button class="w-full flex justify-center py-4 px-4 border border-transparent rounded-DEFAULT shadow-sm font-label-md text-label-md text-surface-white bg-deep-navy hover:bg-primary transition-all duration-300 hover:shadow-lg" type="submit">
+                            Sign In
+                        </button>
+</div></form>
+<!-- Divider -->
+<div class="mt-stack-lg relative">
+<div aria-hidden="true" class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-outline-variant"></div>
+</div>
+<div class="relative flex justify-center text-sm">
+<span class="px-2 bg-surface-white text-on-surface-variant font-label-sm text-label-sm">
+                            Or continue with
+                        </span>
+</div>
+</div>
+<!-- Social Logins -->
+<div class="mt-stack-md flex justify-center">
+<button class="w-full max-w-[200px] inline-flex justify-center items-center py-3 px-4 border border-outline-variant rounded-DEFAULT bg-surface-white font-label-sm text-label-sm text-on-surface hover:bg-surface-container-low focus:outline-none focus:ring-1 focus:ring-deep-navy transition-all duration-200" type="button">
+<span class="sr-only">Sign in with Google</span>
+<svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path>
+</svg>
+<span class="ml-2">Google</span>
+</button>
+</div>
+<!-- Footer Sign Up Link -->
+<p class="mt-stack-lg text-center font-body-sm text-body-sm text-on-surface-variant">
+                    Don't have an account? 
+                    <a class="font-label-md text-label-md text-deep-navy hover:text-secondary hover:underline transition-colors" href="#">Sign Up</a>
+</p>
+</div>
+</section>
+</main>
+
+
+</body></html>
