@@ -1,3 +1,6 @@
+
+
+
 import React, { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
@@ -35,7 +38,7 @@ export default function OrderConfirmation() {
             <span className="material-symbols-outlined text-4xl" data-weight="fill" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
           </div>
           <h1 className="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-deep-navy mb-base">Thank you for your order!</h1>
-          <p className="font-body-md text-body-md text-on-surface-variant">Order #MDS-82910 has been placed successfully. We'll send you a confirmation email shortly.</p>
+          <p className="font-body-md text-body-md text-on-surface-variant">Order #{location.state?.orderId || 'MDS-82910'} has been placed successfully. We'll send you a confirmation email shortly.</p>
         </div>
 
         {/* Order Details Grid */}

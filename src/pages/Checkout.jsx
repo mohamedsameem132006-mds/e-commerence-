@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
+import { db } from '../firebase';
+import { collection, addDoc } from 'firebase/firestore';
 
 export default function Checkout() {
-  const { cart, cartCount, clearCart } = useApp();
+  const { cart, cartCount, clearCart, user } = useApp();
   const navigate = useNavigate();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Form states
   const [formData, setFormData] = useState({
@@ -26,18 +29,48 @@ export default function Checkout() {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (cart.length === 0) {
       alert('Your cart is empty!');
       return;
     }
-    // Navigate to order confirmation
-    navigate('/order-confirmation', { state: { orderDetails: { ...formData, items: cart } } });
+    
+    setIsSubmitting(true);
+    try {
+      const subtotal = cart.reduce((acc, item) => acc + item.price * (item.quantity || item.qty || 1), 0);
+      const tax = subtotal * 0.08;
+      const total = subtotal + tax;
+
+      // Save to Firebase
+      const docRef = await addDoc(collection(db, "orders"), {
+        shippingDetails: {
+          name: formData.name,
+          email: formData.email,
+          address: formData.address,
+          city: formData.city,
+          state: formData.state,
+          zip: formData.zip,
+          country: formData.country,
+        },
+        items: cart,
+        totals: { subtotal, tax, total },
+        uid: user?.uid || 'guest',
+        createdAt: new Date().toISOString()
+      });
+
+      // Navigate to order confirmation
+      navigate('/order-confirmation', { state: { orderId: docRef.id, orderDetails: { ...formData, items: cart } } });
+    } catch (error) {
+      console.error("Error saving order:", error);
+      alert('There was an error processing your order.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   // Calculate totals
-  const subtotal = cart.reduce((acc, item) => acc + item.price * item.qty, 0);
+  const subtotal = cart.reduce((acc, item) => acc + item.price * (item.quantity || item.qty || 1), 0);
   const tax = subtotal * 0.08;
   const total = subtotal + tax;
 

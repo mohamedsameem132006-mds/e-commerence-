@@ -1,8 +1,12 @@
+import { Link, useLocation } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
+
+import { doc, getDoc } from 'firebase/firestore';
+import { db } from '../firebase';
 
 // Fix for default marker icon missing in React-Leaflet
 delete L.Icon.Default.prototype._getIconUrl;
@@ -13,6 +17,9 @@ L.Icon.Default.mergeOptions({
 });
 
 export default function OrderTracking() {
+  const location = useLocation();
+  const orderId = location.state?.orderId;
+
   const startPosition = [40.7128, -74.0060]; // NY
   const endPosition = [40.7580, -73.9855]; // Times Square
   const [currentPosition, setCurrentPosition] = useState(startPosition);
