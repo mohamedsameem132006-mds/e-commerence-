@@ -1,6 +1,7 @@
 import React, { createContext, useState, useContext, useCallback, useEffect } from 'react';
-import { auth } from '../firebase';
+import { auth, db } from '../firebase';
 import { onAuthStateChanged } from 'firebase/auth';
+import { doc, getDoc, setDoc } from 'firebase/firestore';
 
 const AppContext = createContext();
 
@@ -15,15 +16,14 @@ export function AppProvider({ children }) {
       setUser(currentUser);
       if (currentUser) {
         try {
-          const cartRes = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/cart/${currentUser.uid}`);
-          if (cartRes.ok) {
-            const data = await cartRes.json();
-            setCart(data);
-          }
-          const favRes = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/favorites/${currentUser.uid}`);
-          if (favRes.ok) {
-            const favData = await favRes.json();
-            setFavorites(favData);
+          const userDoc = await getDoc(doc(db, 'users', currentUser.uid));
+          if (userDoc.exists()) {
+            const data = userDoc.data();
+            setCart(data.cart || []);
+            setFavorites(data.favorites || []);
+          } else {
+            setCart([]);
+            setFavorites([]);
           }
         } catch (err) {
           console.error("Failed to fetch user data", err);
@@ -37,82 +37,57 @@ export function AppProvider({ children }) {
     return () => unsubscribe();
   }, []);
 
+  const updateFirestore = async (uid, cartData, favData) => {
+    try {
+      await setDoc(doc(db, 'users', uid), {
+        cart: cartData,
+        favorites: favData
+      }, { merge: true });
+    } catch (err) {
+      console.error("Error updating Firestore:", err);
+    }
+  };
+
   const addToCart = useCallback(async (product, qty = 1) => {
-    let newQuantity = qty;
     setCart((prevCart) => {
+      let newCart;
       const existingItem = prevCart.find((item) => item.id === product.id);
       if (existingItem) {
-        newQuantity = (existingItem.quantity || existingItem.qty || 1) + qty;
-        return prevCart.map((item) => item.id === product.id ? { ...item, quantity: newQuantity } : item);
+        const newQuantity = (existingItem.quantity || existingItem.qty || 1) + qty;
+        newCart = prevCart.map((item) => item.id === product.id ? { ...item, quantity: newQuantity } : item);
+      } else {
+        newCart = [...prevCart, { ...product, quantity: qty }];
       }
-      return [...prevCart, { ...product, quantity: qty }];
+      if (user) updateFirestore(user.uid, newCart, favorites);
+      return newCart;
     });
-
-    if (user) {
-      try {
-        await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/cart/add`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ uid: user.uid, product, quantity: newQuantity })
-        });
-      } catch (err) {
-        console.error(err);
-      }
-    }
-  }, [user]);
+  }, [user, favorites]);
 
   const removeFromCart = useCallback(async (productId) => {
-    setCart((prevCart) => prevCart.filter((item) => item.id !== productId));
-    if (user) {
-      try {
-        await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/cart/remove`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ uid: user.uid, product_id: productId })
-        });
-      } catch (err) {
-        console.error(err);
-      }
-    }
-  }, [user]);
+    setCart((prevCart) => {
+      const newCart = prevCart.filter((item) => item.id !== productId);
+      if (user) updateFirestore(user.uid, newCart, favorites);
+      return newCart;
+    });
+  }, [user, favorites]);
 
   const clearCart = useCallback(async () => {
     setCart([]);
-    if (user) {
-      try {
-        await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/cart/clear`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ uid: user.uid })
-        });
-      } catch (err) {
-        console.error(err);
-      }
-    }
-  }, [user]);
+    if (user) updateFirestore(user.uid, [], favorites);
+  }, [user, favorites]);
 
   const toggleFavorite = useCallback(async (productId) => {
-    let isFavoriteNow = false;
     setFavorites((prevFavorites) => {
+      let newFavorites;
       if (prevFavorites.includes(productId)) {
-        return prevFavorites.filter((id) => id !== productId);
+        newFavorites = prevFavorites.filter((id) => id !== productId);
+      } else {
+        newFavorites = [...prevFavorites, productId];
       }
-      isFavoriteNow = true;
-      return [...prevFavorites, productId];
+      if (user) updateFirestore(user.uid, cart, newFavorites);
+      return newFavorites;
     });
-
-    if (user) {
-      try {
-        await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/favorites/toggle`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ uid: user.uid, product_id: productId, isFavorite: isFavoriteNow })
-        });
-      } catch (err) {
-        console.error(err);
-      }
-    }
-  }, [user]);
+  }, [user, cart]);
 
   const cartCount = cart.reduce((acc, item) => acc + (item.quantity || item.qty || 1), 0);
   const favoriteCount = favorites.length;

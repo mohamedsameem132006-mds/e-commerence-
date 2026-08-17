@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { auth } from '../firebase';
+import { auth, db } from '../firebase';
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+import { doc, setDoc } from 'firebase/firestore';
 
 export default function Login() {
   const [isSignUp, setIsSignUp] = useState(false);
@@ -23,11 +24,10 @@ export default function Login() {
       }
       
       const user = userCredential.user;
-      await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/users`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ uid: user.uid, email: user.email, name: name || user.displayName || 'User' })
-      });
+      await setDoc(doc(db, "users", user.uid), {
+        email: user.email,
+        name: name || user.displayName || 'User'
+      }, { merge: true });
       
       navigate('/');
     } catch (err) {
@@ -41,11 +41,10 @@ export default function Login() {
       const userCredential = await signInWithPopup(auth, provider);
       
       const user = userCredential.user;
-      await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/users`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ uid: user.uid, email: user.email, name: user.displayName || 'Google User' })
-      });
+      await setDoc(doc(db, "users", user.uid), {
+        email: user.email,
+        name: user.displayName || 'Google User'
+      }, { merge: true });
       
       navigate('/');
     } catch (err) {
