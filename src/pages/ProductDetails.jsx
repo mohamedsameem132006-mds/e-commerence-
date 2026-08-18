@@ -37,6 +37,7 @@ export default function ProductDetails() {
             <Link className="text-on-surface-variant hover:text-secondary font-label-md text-label-md transition-all duration-200 hover:opacity-80 scale-95 active:scale-100 transition-transform" to="/category/footwear">Footwear</Link>
             <Link className="text-secondary border-b-2 border-secondary pb-1 font-label-md text-label-md transition-all duration-200 hover:opacity-80 scale-95 active:scale-100 transition-transform" to="/category/electronics">Electronics</Link>
             <Link className="text-on-surface-variant hover:text-secondary font-label-md text-label-md transition-all duration-200 hover:opacity-80 scale-95 active:scale-100 transition-transform" to="/category/home-appliances">Home</Link>
+            <Link className="text-on-surface-variant hover:text-secondary font-label-md text-label-md transition-all duration-200 hover:opacity-80 scale-95 active:scale-100 transition-transform" to="/my-orders">My Orders</Link>
           </div>
         </div>
         <div className="flex items-center gap-stack-md">
@@ -44,15 +45,20 @@ export default function ProductDetails() {
             <input className="border border-outline-variant rounded-full py-2 pl-4 pr-10 bg-surface-bright focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary w-64 font-body-sm text-body-sm transition-colors" placeholder="Search..." type="text" />
             <span className="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant" style={{ fontVariationSettings: "'FILL' 0" }}>search</span>
           </div>
-          <button className="p-2 rounded-full hover:bg-surface-container-low transition-colors text-secondary dark:text-secondary-fixed-dim relative">
+          <button className="p-2 rounded-full hover:bg-surface-container-low transition-colors text-secondary dark:text-secondary-fixed-dim relative" title="Favorites">
             <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 0" }}>favorite</span>
             {favoriteCount > 0 && <span className="absolute top-1 right-1 bg-error text-on-error font-label-sm text-label-sm rounded-full w-4 h-4 flex items-center justify-center" style={{ fontSize: '10px' }}>{favoriteCount}</span>}
           </button>
-          <Link className="p-2 rounded-full hover:bg-surface-container-low transition-colors text-secondary dark:text-secondary-fixed-dim relative" to="/checkout">
+          <Link className="p-2 rounded-full hover:bg-surface-container-low transition-colors text-secondary dark:text-secondary-fixed-dim relative" to="/checkout" title="Cart">
             <span className="material-symbols-outlined">shopping_cart</span>
             {cartCount > 0 && <span className="absolute top-1 right-1 bg-error text-on-error font-label-sm text-label-sm rounded-full w-4 h-4 flex items-center justify-center" style={{ fontSize: '10px' }}>{cartCount}</span>}
           </Link>
-          <Link className="p-2 rounded-full hover:bg-surface-container-low transition-colors text-secondary dark:text-secondary-fixed-dim" to="/login"><span className="material-symbols-outlined">account_circle</span></Link>
+          <Link className="p-2 rounded-full hover:bg-surface-container-low transition-colors text-secondary dark:text-secondary-fixed-dim" to="/my-orders" title="My Orders">
+            <span className="material-symbols-outlined">inventory_2</span>
+          </Link>
+          <Link className="p-2 rounded-full hover:bg-surface-container-low transition-colors text-secondary dark:text-secondary-fixed-dim" to="/login" title="Account">
+            <span className="material-symbols-outlined">account_circle</span>
+          </Link>
         </div>
       </nav>
 

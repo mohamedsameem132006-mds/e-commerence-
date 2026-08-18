@@ -392,18 +392,24 @@ export default function CategoryPage() {
             <Link className={`font-body-md text-body-md pb-1 transition-all duration-200 hover:opacity-80 ${categoryName === 'footwear' ? 'text-secondary border-b-2 border-secondary' : 'text-on-surface-variant hover:text-secondary'}`} to="/category/footwear">Footwear</Link>
             <Link className={`font-body-md text-body-md pb-1 transition-all duration-200 hover:opacity-80 ${categoryName === 'electronics' ? 'text-secondary border-b-2 border-secondary' : 'text-on-surface-variant hover:text-secondary'}`} to="/category/electronics">Electronics</Link>
             <Link className={`font-body-md text-body-md pb-1 transition-all duration-200 hover:opacity-80 ${categoryName === 'home-appliances' ? 'text-secondary border-b-2 border-secondary' : 'text-on-surface-variant hover:text-secondary'}`} to="/category/home-appliances">Home</Link>
+            <Link className="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-all duration-200 hover:opacity-80" to="/my-orders">My Orders</Link>
           </div>
         </div>
         <div className="flex items-center gap-stack-md text-secondary">
-          <button className="scale-95 active:scale-100 transition-transform hover:opacity-80 relative">
+          <button className="scale-95 active:scale-100 transition-transform hover:opacity-80 relative" title="Favorites">
             <span className="material-symbols-outlined" style={{ strokeWidth: '2px' }}>favorite</span>
             {favoriteCount > 0 && <span className="absolute -top-1 -right-1 bg-error text-on-error text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">{favoriteCount}</span>}
           </button>
-          <Link className="scale-95 active:scale-100 transition-transform hover:opacity-80 relative" to="/checkout">
+          <Link className="scale-95 active:scale-100 transition-transform hover:opacity-80 relative" to="/checkout" title="Cart">
             <span className="material-symbols-outlined" style={{ strokeWidth: '2px' }}>shopping_cart</span>
             {cartCount > 0 && <span className="absolute -top-1 -right-1 bg-error text-on-error text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">{cartCount}</span>}
           </Link>
-          <Link className="scale-95 active:scale-100 transition-transform hover:opacity-80" to="/login"><span className="material-symbols-outlined" style={{ strokeWidth: '2px' }}>account_circle</span></Link>
+          <Link className="scale-95 active:scale-100 transition-transform hover:opacity-80" to="/my-orders" title="My Orders">
+            <span className="material-symbols-outlined" style={{ strokeWidth: '2px' }}>inventory_2</span>
+          </Link>
+          <Link className="scale-95 active:scale-100 transition-transform hover:opacity-80" to="/login" title="Account">
+            <span className="material-symbols-outlined" style={{ strokeWidth: '2px' }}>account_circle</span>
+          </Link>
         </div>
       </nav>
 

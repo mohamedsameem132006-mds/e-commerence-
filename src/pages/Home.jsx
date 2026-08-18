@@ -20,6 +20,7 @@ export default function Home() {
             <Link className="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-all duration-200 hover:opacity-80 scale-95 active:scale-100 transition-transform" to="/category/footwear">Footwear</Link>
             <Link className="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-all duration-200 hover:opacity-80 scale-95 active:scale-100 transition-transform" to="/category/electronics">Electronics</Link>
             <Link className="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-all duration-200 hover:opacity-80 scale-95 active:scale-100 transition-transform" to="/category/home-appliances">Home</Link>
+            <Link className="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-all duration-200 hover:opacity-80 scale-95 active:scale-100 transition-transform" to="/my-orders">My Orders</Link>
           </nav>
         </div>
         <div className="flex items-center gap-4">
@@ -36,11 +37,14 @@ export default function Home() {
             <span className="material-symbols-outlined" data-icon="favorite" style={{ fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24" }}>favorite</span>
             {favoriteCount > 0 && <span className="absolute -top-1 -right-1 bg-error text-on-error text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">{favoriteCount}</span>}
           </button>
-          <Link className="text-secondary dark:text-secondary-fixed-dim transition-all duration-200 hover:opacity-80 scale-95 active:scale-100 transition-transform relative" to="/checkout">
+          <Link className="text-secondary dark:text-secondary-fixed-dim transition-all duration-200 hover:opacity-80 scale-95 active:scale-100 transition-transform relative" to="/checkout" title="Cart">
             <span className="material-symbols-outlined" data-icon="shopping_cart" style={{ fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24" }}>shopping_cart</span>
             {cartCount > 0 && <span className="absolute -top-1 -right-1 bg-error text-on-error text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">{cartCount}</span>}
           </Link>
-          <Link className="text-secondary dark:text-secondary-fixed-dim transition-all duration-200 hover:opacity-80 scale-95 active:scale-100 transition-transform" to="/login">
+          <Link className="text-secondary dark:text-secondary-fixed-dim transition-all duration-200 hover:opacity-80 scale-95 active:scale-100 transition-transform" to="/my-orders" title="My Orders">
+            <span className="material-symbols-outlined" data-icon="inventory_2" style={{ fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24" }}>inventory_2</span>
+          </Link>
+          <Link className="text-secondary dark:text-secondary-fixed-dim transition-all duration-200 hover:opacity-80 scale-95 active:scale-100 transition-transform" to="/login" title="Account">
             <span className="material-symbols-outlined" data-icon="account_circle" style={{ fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24" }}>account_circle</span>
           </Link>
         </div>

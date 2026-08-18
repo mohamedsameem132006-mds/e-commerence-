@@ -8,6 +8,7 @@ import OrderConfirmation from './pages/OrderConfirmation.jsx';
 import OrderTracking from './pages/OrderTracking.jsx';
 import CategoryPage from './pages/CategoryPage.jsx';
 import Checkout from './pages/Checkout.jsx';
+import MyOrders from './pages/MyOrders.jsx';
 
 const ProtectedRoute = ({ children }) => {
   const { user, loadingAuth } = useApp();
@@ -35,6 +36,7 @@ export default function App() {
         <Route path="/checkout" element={<ProtectedRoute><Checkout /></ProtectedRoute>} />
         <Route path="/order-confirmation" element={<ProtectedRoute><OrderConfirmation /></ProtectedRoute>} />
         <Route path="/order-tracking" element={<ProtectedRoute><OrderTracking /></ProtectedRoute>} />
+        <Route path="/my-orders" element={<ProtectedRoute><MyOrders /></ProtectedRoute>} />
         <Route path="/category/:categoryName" element={<ProtectedRoute><CategoryPage /></ProtectedRoute>} />
       </Routes>
     </BrowserRouter>

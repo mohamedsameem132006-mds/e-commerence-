@@ -79,8 +79,15 @@ export default function OrderConfirmation() {
                 <span className="material-symbols-outlined">local_shipping</span>
                 Track Order
               </Link>
-              <Link className="flex-1 bg-transparent border-2 border-secondary text-secondary hover:bg-secondary/5 font-label-md text-label-md py-3 px-6 rounded-lg transition-colors text-center" to="/">
-                Continue Shopping
+              <Link
+                className="flex-1 bg-surface-container-low hover:bg-surface-container border border-outline-variant text-on-surface font-label-md text-label-md py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2"
+                to="/my-orders"
+              >
+                <span className="material-symbols-outlined">inventory_2</span>
+                My Orders
+              </Link>
+              <Link className="flex-1 bg-transparent border-2 border-secondary text-secondary hover:bg-secondary/5 font-label-md text-label-md py-3 px-6 rounded-lg transition-colors text-center flex items-center justify-center" to="/">
+                Shop More
               </Link>
             </div>
           </div>
@@ -92,19 +99,19 @@ export default function OrderConfirmation() {
                 <span className="material-symbols-outlined text-secondary">calendar_today</span>
                 <h2 className="font-headline-sm text-headline-sm text-deep-navy">Estimated Delivery</h2>
               </div>
-              <p className="font-body-lg text-body-lg font-bold text-on-surface">Thu, Oct 26 - Mon, Oct 30</p>
+              <p className="font-body-lg text-body-lg font-bold text-on-surface">Expected Today</p>
               <div className="w-full bg-surface-container-high rounded-full h-2 mt-4 overflow-hidden">
                 <div className="bg-secondary h-2 rounded-full w-1/4"></div>
               </div>
-              <p className="font-label-sm text-label-sm text-on-surface-variant mt-2 text-center uppercase tracking-wider">Processing</p>
+              <p className="font-label-sm text-label-sm text-on-surface-variant mt-2 text-center uppercase tracking-wider">Out for Delivery</p>
             </section>
             <section className="bg-surface-white rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.04)] p-stack-md border border-outline-variant/30">
               <h2 className="font-headline-sm text-headline-sm text-deep-navy mb-stack-sm">Shipping Details</h2>
               <div className="font-body-sm text-body-sm text-on-surface-variant space-y-1">
-                <p className="font-semibold text-on-surface">{orderDetails?.name || 'Alex Mercer'}</p>
-                <p>{orderDetails?.address || '123 Commerce Boulevard, Suite 400'}</p>
-                <p>{orderDetails?.city || 'Metropolis'}, {orderDetails?.state || 'NY'} {orderDetails?.zip || '10001'}</p>
-                <p>{orderDetails?.country || 'United States'}</p>
+                <p className="font-semibold text-on-surface">{orderDetails?.name || 'Sameem'}</p>
+                <p>{orderDetails?.address || '123 Perundurai Road'}</p>
+                <p>{orderDetails?.city || 'Erode'}, {orderDetails?.state || 'Tamil Nadu'} {orderDetails?.zip || '638011'}</p>
+                <p>{orderDetails?.country || 'India'}</p>
               </div>
             </section>
             <section className="bg-surface-white rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.04)] p-stack-md border border-outline-variant/30">

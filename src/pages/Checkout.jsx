@@ -11,14 +11,14 @@ export default function Checkout() {
 
   // Form states
   const [formData, setFormData] = useState({
-    name: 'Alex Mercer',
-    email: 'alex@example.com',
-    address: '123 Commerce Boulevard, Suite 400',
-    city: 'Metropolis',
-    state: 'NY',
-    zip: '10001',
-    country: 'United States',
-    cardName: 'Alex Mercer',
+    name: user?.displayName || 'Sameem',
+    email: user?.email || 'sameem@example.com',
+    address: '123 Perundurai Road, Near Collectorate',
+    city: 'Erode',
+    state: 'Tamil Nadu',
+    zip: '638011',
+    country: 'India',
+    cardName: user?.displayName || 'Sameem',
     cardNumber: '4242 4242 4242 4242',
     expiry: '12/28',
     cvv: '123'
