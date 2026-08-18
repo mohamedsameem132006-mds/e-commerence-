@@ -20,23 +20,53 @@ export default function OrderTracking() {
   const location = useLocation();
   const orderId = location.state?.orderId;
 
+  const [order, setOrder] = useState(null);
+  const [loadingOrder, setLoadingOrder] = useState(true);
+
   const startPosition = [40.7128, -74.0060]; // NY
   const endPosition = [40.7580, -73.9855]; // Times Square
   const [currentPosition, setCurrentPosition] = useState(startPosition);
 
+  // Fetch real order from Firestore
+  useEffect(() => {
+    const fetchOrder = async () => {
+      if (!orderId) { setLoadingOrder(false); return; }
+      try {
+        const docSnap = await getDoc(doc(db, 'orders', orderId));
+        if (docSnap.exists()) {
+          setOrder({ id: docSnap.id, ...docSnap.data() });
+        }
+      } catch (err) {
+        console.error('Error fetching order:', err);
+      } finally {
+        setLoadingOrder(false);
+      }
+    };
+    fetchOrder();
+  }, [orderId]);
+
+  // Map animation
   useEffect(() => {
     let progress = 0;
     const interval = setInterval(() => {
       progress += 0.005;
       if (progress >= 1) progress = 0;
-      
       const newLat = startPosition[0] + (endPosition[0] - startPosition[0]) * progress;
       const newLng = startPosition[1] + (endPosition[1] - startPosition[1]) * progress;
       setCurrentPosition([newLat, newLng]);
     }, 1000);
-    
     return () => clearInterval(interval);
   }, []);
+
+  const shipping = order?.shippingDetails || {};
+  const items = order?.items || [];
+  const totals = order?.totals || {};
+  const displayId = order?.id || orderId || 'N/A';
+  const locationLabel = shipping.city && shipping.state
+    ? `${shipping.city}, ${shipping.state}`
+    : 'In Transit';
+
+
 
   return (
     <div className="bg-background text-on-background font-body-md min-h-screen flex flex-col w-full">
@@ -65,7 +95,7 @@ export default function OrderTracking() {
         <div className="mb-stack-lg flex flex-col md:flex-row md:items-end justify-between gap-stack-md border-b border-surface-variant pb-stack-md">
           <div>
             <h1 className="font-headline-xl text-headline-xl text-on-surface">Track Order</h1>
-            <p className="font-body-lg text-body-lg text-on-surface-variant mt-2">Order #MDS-82910</p>
+            <p className="font-body-lg text-body-lg text-on-surface-variant mt-2">Order #{displayId.slice(0, 12).toUpperCase()}</p>
           </div>
           <div className="flex items-center gap-2 bg-primary-fixed text-on-primary-fixed px-4 py-2 rounded-full font-label-md text-label-md">
             <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>local_shipping</span>
@@ -91,7 +121,7 @@ export default function OrderTracking() {
               </MapContainer>
               <div className="absolute bottom-4 right-4 bg-surface-white px-4 py-2 rounded-lg shadow-sm border border-surface-variant font-label-sm text-label-sm text-on-surface-variant flex items-center gap-2 z-[1000]">
                 <span className="material-symbols-outlined text-base">my_location</span>
-                Metropolis, NY
+                {locationLabel}
               </div>
             </div>
 
@@ -169,16 +199,26 @@ export default function OrderTracking() {
                 <li className="flex justify-between items-start">
                   <span className="font-body-sm text-body-sm text-on-surface-variant">Tracking No.</span>
                   <div className="flex items-center gap-2">
-                    <span className="font-label-md text-label-md text-secondary">MDS-82910-TRK</span>
+                    <span className="font-label-md text-label-md text-secondary">{displayId.slice(0, 12).toUpperCase()}-TRK</span>
                     <button className="text-on-surface-variant hover:text-secondary transition-colors" title="Copy tracking number">
                       <span className="material-symbols-outlined text-sm">content_copy</span>
                     </button>
                   </div>
                 </li>
                 <li className="flex justify-between items-start">
-                  <span className="font-body-sm text-body-sm text-on-surface-variant">Weight</span>
-                  <span className="font-label-md text-label-md text-on-surface text-right">4.2 lbs</span>
+                  <span className="font-body-sm text-body-sm text-on-surface-variant">Ship To</span>
+                  <span className="font-label-md text-label-md text-on-surface text-right">{shipping.name || '—'}</span>
                 </li>
+                <li className="flex justify-between items-start">
+                  <span className="font-body-sm text-body-sm text-on-surface-variant">Address</span>
+                  <span className="font-label-md text-label-md text-on-surface text-right max-w-[180px]">{shipping.city ? `${shipping.city}, ${shipping.state}` : '—'}</span>
+                </li>
+                {totals.total && (
+                <li className="flex justify-between items-start border-t border-surface-variant pt-3 mt-1">
+                  <span className="font-body-sm text-body-sm text-on-surface-variant">Order Total</span>
+                  <span className="font-label-md text-label-md text-on-surface text-right">${totals.total?.toFixed(2)}</span>
+                </li>
+                )}
               </ul>
             </div>
             {/* Help Card */}

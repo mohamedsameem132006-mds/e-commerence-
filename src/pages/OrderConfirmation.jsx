@@ -8,6 +8,7 @@ import { useApp } from '../context/AppContext';
 export default function OrderConfirmation() {
   const location = useLocation();
   const { clearCart } = useApp();
+  const orderId = location.state?.orderId;
   const orderDetails = location.state?.orderDetails;
 
   useEffect(() => {
@@ -18,7 +19,7 @@ export default function OrderConfirmation() {
 
   // Fallback to empty if accessed directly
   const items = orderDetails?.items || [];
-  const subtotal = items.reduce((acc, item) => acc + item.price * item.qty, 0);
+  const subtotal = items.reduce((acc, item) => acc + item.price * (item.quantity || item.qty || 1), 0);
   const tax = subtotal * 0.08;
   const total = subtotal + tax;
 
@@ -70,7 +71,11 @@ export default function OrderConfirmation() {
             </section>
             {/* Actions */}
             <div className="flex flex-col sm:flex-row gap-stack-sm pt-stack-sm">
-              <Link className="flex-1 bg-secondary hover:bg-secondary/90 text-on-secondary font-label-md text-label-md py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2" to="/order-tracking">
+              <Link
+                className="flex-1 bg-secondary hover:bg-secondary/90 text-on-secondary font-label-md text-label-md py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2"
+                to="/order-tracking"
+                state={{ orderId }}
+              >
                 <span className="material-symbols-outlined">local_shipping</span>
                 Track Order
               </Link>
